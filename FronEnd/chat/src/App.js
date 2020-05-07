@@ -1,14 +1,18 @@
 //NOTE/: external
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 //NOTE/: internal
 import { Auth } from "./pages";
 
 function App() {
     return (
-        <section className='wrapper'>
-            <Auth />
-        </section>
+        <Router>
+            <section className='wrapper'>
+                <Auth />
+            </section>
+        </Router>
     );
 }
 

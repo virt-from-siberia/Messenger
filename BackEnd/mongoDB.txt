@@ -1,0 +1,3 @@
+
+    "MongoBDLogin": Aleksey,
+    "MMongoPassword": 'SamsungS8'

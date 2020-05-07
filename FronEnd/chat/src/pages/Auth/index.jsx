@@ -2,7 +2,7 @@
 import React from "react";
 
 //NOTE/: ant internal
-import LoginForm from "../../modules/LoginForm";
+import { LoginForm } from "../../modules";
 import "./Auth.scss";
 
 const Auth = () => {

@@ -1,10 +1,11 @@
 //NOTE/: external
 import React from "react";
+import { Link } from "react-router-dom";
 
 //NOTE/: ant desing
 import { Form, Input, Button, Checkbox } from "antd";
 
-const LoginForm = () => {
+export const LoginForm = () => {
     const layout = {
         labelCol: {
             span: 8,
@@ -33,6 +34,7 @@ const LoginForm = () => {
             <h2>Войти в аккаунт</h2>
             <p>Пожалутса войдите в аккаунт</p>
             <Form
+                className='login'
                 {...layout}
                 name='basic'
                 initialValues={{
@@ -42,7 +44,7 @@ const LoginForm = () => {
                 onFinishFailed={onFinishFailed}
             >
                 <Form.Item
-                    label='email'
+                    label='E-mail'
                     name='email'
                     rules={[
                         {
@@ -55,7 +57,7 @@ const LoginForm = () => {
                 </Form.Item>
 
                 <Form.Item
-                    label='Password'
+                    label='Пароль'
                     name='password'
                     rules={[
                         {
@@ -67,19 +69,12 @@ const LoginForm = () => {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item
-                    {...tailLayout}
-                    name='remember'
-                    valuePropName='checked'
-                >
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
                 <Form.Item {...tailLayout}>
                     <Button type='primary' htmlType='submit'>
-                        Submit
+                        Отправить
                     </Button>
                 </Form.Item>
+                <Link to='/registration'>Зарегистрироватся</Link>
             </Form>
         </>
     );

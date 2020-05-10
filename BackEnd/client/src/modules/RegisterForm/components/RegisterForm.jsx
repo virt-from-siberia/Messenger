@@ -81,8 +81,10 @@ export const RegisterForm = () => {
         <div className='auth'>
             <div className='auth__content'>
                 <div className='block'>
-                    <h2>Регистрация</h2>
-                    <p>Зарегестрируйте аккаунт</p>
+                    <div className='block__header'>
+                        <h2>Регистрация</h2>
+                        <p>Зарегестрируйте аккаунт</p>
+                    </div>
                     {loading && (
                         <Spin className='spinner' indicator={antIcon} />
                     )}

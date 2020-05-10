@@ -10,10 +10,10 @@ export const useRoutes = (isAuthenticated) => {
     if (isAuthenticated) {
         return (
             <Switch>
-                <Route path='/home' exact>
+                <Route path='/im' exact>
                     <Home />
                 </Route>
-                <Redirect to='/home' />
+                <Redirect to='/im' />
             </Switch>
         );
     }

@@ -7,8 +7,8 @@ import openNotification from "../../../utils/helpers/openNotification";
 import { AuthContext } from "../../../context/AuthContext";
 import "./LoginForm.scss";
 //NOTE/: ant
-import { Form, Input, Tooltip, Button, Spin } from "antd";
-import { QuestionCircleOutlined, LoadingOutlined } from "@ant-design/icons";
+import { Form, Input, Button, Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 
 export const LoginForm = () => {
     const auth = useContext(AuthContext);
@@ -66,13 +66,20 @@ export const LoginForm = () => {
     const onFinishFailed = (errorInfo) => {
         console.log("Failed:", errorInfo);
     };
+    const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
     return (
         <div className='auth'>
             <div className='auth__content'>
                 <div className='block'>
-                    <h2>Войти в аккаунт</h2>
-                    <p>Пожалутса войдите в аккаунт</p>
+                    <div className='block__header'>
+                        <h2>Войти в аккаунт</h2>
+                        <p>Пожалутса войдите в аккаунт</p>
+                    </div>
+                    {loading && (
+                        <Spin className='spinner' indicator={antIcon} />
+                    )}
+
                     <Form
                         className='login'
                         {...layout}

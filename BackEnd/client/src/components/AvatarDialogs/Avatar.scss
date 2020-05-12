@@ -1,4 +1,5 @@
 .avatar {
+    // position: relative;
     border-radius: 50%;
     width: 100%;
     width: 100%;
@@ -13,11 +14,10 @@
         background: linear-gradient(to left, #1c92d2, #f2fcfe);
     }
 }
-
-.name {
+.name-dialogs {
     position: absolute;
-    left: 200px;
-    bottom: 17px;
+    left: 13px;
+    bottom: 9px;
     color: white;
     z-index: 1;
     font-size: 22px;

@@ -86,14 +86,14 @@
             }
         }
     }
+    .message__icon-readed {
+        position: absolute;
+        bottom: 4px;
+        left: 232px;
+    }
+    .message__icon-readed--no {
+        position: absolute;
+        bottom: 4px;
+        left: 23spx;
+    }
 }
-// .message__icon-readed {
-//     position: absolute;
-//     bottom: 0;
-//     left: 237px;
-// }
-// .message__icon-readed--no {
-//     position: absolute;
-//     bottom: 0;
-//     left: 237px;
-// }

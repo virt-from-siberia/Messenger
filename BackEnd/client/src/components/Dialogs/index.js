@@ -19,6 +19,7 @@ const Dialogs = ({
     inputValue,
     onSelectDialog,
     currentDialogId,
+    unread,
 }) => {
     return (
         <div className='dialogs'>
@@ -40,6 +41,7 @@ const Dialogs = ({
                         currentDialogId={currentDialogId}
                         user={item.user}
                         message={item}
+                        unread={99}
                     />
                 ))
             ) : (

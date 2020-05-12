@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import ReactAudioPlayer from "react-audio-player";
 
 //NOTE/: emoji library --->
 import { Emoji } from "emoji-mart";
@@ -143,6 +144,7 @@ const Message = ({
                                     <Typing />
                                 </div>
                             )}
+                            {/*//Important_NOTE///:} audio elemet */}
                             {audio && <MessageAudio audioSrc={audio} />}
                         </div>
                     )}

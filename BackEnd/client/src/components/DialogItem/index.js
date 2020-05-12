@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 //NOTE/: internal
 import { Time, MessageStatus } from "../";
-import { Avatar } from "../";
+import { AvatarDialogs } from "../";
 import "./DialogItem.scss";
 
 //NOTE/: fns library --->
@@ -20,11 +20,6 @@ const getMessageTime = (created_at) => {
 };
 
 const DialogItem = ({ user, message, unread, isMe }) => {
-    if (user.avatar === null) {
-        user.avatar =
-            "https://sun1-15.userapi.com/hzd3-9pOOIiWaBHsqgHjhtNwjeJuQBy4rrTtKg/UYWdIwXZE6Y.jpg?ava=1";
-    }
-
     return (
         <div
             className={classNames("dialogs__item ", {
@@ -32,7 +27,8 @@ const DialogItem = ({ user, message, unread, isMe }) => {
             })}
         >
             <div className='dialogs__item-avatar'>
-                <img src={user.avatar} alt={`${user.fullname} avatar}`} />
+                {/* <img src={user.avatar} alt={`${user.fullname} avatar}`} />*/}
+                <AvatarDialogs user={user} />
             </div>
             <div className='dialogs__item-info'>
                 <div className='dialogs__item-info-top'>
@@ -42,8 +38,8 @@ const DialogItem = ({ user, message, unread, isMe }) => {
                 <div className='dialogs__item-info-bottom'>
                     <p>{message.text}</p>
                     {/*//NOTE/: если userId совпадает с _id отправителя, то сообщению присваивается isMe */}
-                    {isMe && <MessageStatus isMe={true} isRead={false} />}
-                    {unread > 0 && (
+                    {isMe && <MessageStatus isMe={true} isReaded={true} />}
+                    {!isMe && unread > 0 && (
                         <div className='dialogs__item-info-bottom-count'>
                             {unread > 99 ? "+99" : unread}
                         </div>

@@ -4,4 +4,5 @@ export { default as MessageStatus } from "./MessageStatus";
 export { default as Typing } from "./Typing";
 export { default as DialogItem } from "./DialogItem";
 export { default as Avatar } from "./Avatar";
+export { default as AvatarDialogs } from "./AvatarDialogs";
 export { default as Dialogs } from "./Dialogs";

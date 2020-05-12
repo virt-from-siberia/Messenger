@@ -230,36 +230,6 @@
         padding: 15px;
         margin-bottom: 15px;
         display: inline-block;
-
-        &--my {
-            &:after {
-                content: "";
-                margin-top: -17px;
-                padding-top: 0px;
-                position: relative;
-                bottom: -30px;
-                left: 275px !important;
-                border-width: 0 15px 15px 0 !important;
-                border-style: solid;
-                border-color: transparent darken($white, 1%) !important;
-                display: block;
-                width: 0;
-            }
-        }
-
-        &:after {
-            content: "";
-            margin-top: -17px;
-            padding-top: 0px;
-            position: relative;
-            bottom: -30px;
-            left: 66px;
-            border-width: 0 0 15px 15px;
-            border-style: solid;
-            border-color: transparent $blue;
-            display: block;
-            width: 0;
-        }
     }
     &__text {
         color: #fff;

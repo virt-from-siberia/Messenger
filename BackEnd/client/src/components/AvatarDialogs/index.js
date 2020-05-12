@@ -6,19 +6,22 @@ import ava from "../../assets/img/ava.jpg";
 
 import "./Avatar.scss";
 
-const Avatar = (user) => {
+const AvatarDialogs = ({ user }) => {
     if (user.avatar && user.avatar !== undefined) {
         return <img className='avatar' src={user.avatar} alt='avatar' />;
     } else {
+        const firstChar = user.fullname.slice(0, 1);
+        //FIXME: CONSOLE LOG ===========>
+        console.log(firstChar);
         return (
             <div>
-                <p className='name'>A</p>
+                <p className='name-dialogs'>{firstChar}</p>
                 <img className='avatar' src={ava} alt='avatar' />
             </div>
         );
     }
 };
 
-Avatar.propTypes = {};
+AvatarDialogs.propTypes = {};
 
-export default Avatar;
+export default AvatarDialogs;

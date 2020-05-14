@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+
+.status{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+
+    &--online{
+        margin-top: 5px;
+        width: 55px;
+        position: relative;
+
+        &:before{
+            position: absolute;
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: $green;
+            border-radius: 50%;
+            top: 1px;
+            left: -2px;
+        }
+    }
+
+}

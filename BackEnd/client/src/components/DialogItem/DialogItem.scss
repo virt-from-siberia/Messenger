@@ -2,11 +2,49 @@
 
 .dialogs {
     width: 300px;
+    //height: 100%;
+    //overflow: auto;
+
+    &__search{
+        display: flex;
+        justify-content: center;
+        padding: 10px 0px 10px 0px;
+        border-bottom: 1px solid #f7f7f7;
+
+
+        span{
+            padding: 1px;
+            margin: 3px;
+            //width: 250px;
+        }
+
+        input{
+            background-color: #f7f8f9;
+            padding: 0;
+            margin: 0;
+
+        }
+    }
+
 
     &__item {
+        
+        &:hover{
+            cursor: pointer;
+            background-color: #f3f7ff;
+        }
+        &.active{
+            background-color: $blue;
+            color: $white;
+        }
+
+
         $item: &;
         display: flex;
-        margin-bottom: 20px;
+        //border-bottom: 1px solid #f7f7f7;
+        padding: 7px 0;
+
+
 
         &-avatar {
             position: relative;
@@ -14,6 +52,7 @@
             width: 40px;
             height: 40px;
             margin-right: 10px;
+            margin-left: 10px;
 
             img {
                 width: 100%;
@@ -23,6 +62,7 @@
         }
 
         &--online {
+
             #{$item}-avatar {
                 &::before {
                     bottom: -2px;
@@ -45,6 +85,7 @@
             flex-direction: column;
             justify-content: center;
             flex: 1;
+            padding-right: 10px;
             &-top {
                 display: flex;
                 b {
@@ -65,7 +106,7 @@
                     font-size: 14px;
                     text-overflow: ellipsis;
                     overflow: hidden;
-                    width: 230px;
+                    width: 210px;
                     white-space: nowrap;
                 }
                 &-count {
@@ -81,7 +122,7 @@
                     font-size: 11px;
                     text-align: center;
                     line-height: 20px;
-                    box-shadow: 0 0 0 3px #fff;
+                    //box-shadow: 0 0 0 3px #fff;
                 }
             }
         }
@@ -89,11 +130,11 @@
     .message__icon-readed {
         position: absolute;
         bottom: 4px;
-        left: 232px;
+        left: 220px;
     }
     .message__icon-readed--no {
         position: absolute;
         bottom: 4px;
-        left: 23spx;
+        left: 220px;
     }
 }

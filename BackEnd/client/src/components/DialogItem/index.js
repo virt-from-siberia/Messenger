@@ -38,7 +38,7 @@ const DialogItem = ({ user, message, unread, isMe }) => {
                 <div className='dialogs__item-info-bottom'>
                     <p>{message.text}</p>
                     {/*//NOTE/: если userId совпадает с _id отправителя, то сообщению присваивается isMe */}
-                    {isMe && <MessageStatus isMe={true} isReaded={true} />}
+                    {isMe && <MessageStatus isMe={true} isReaded={false} />}
                     {!isMe && unread > 0 && (
                         <div className='dialogs__item-info-bottom-count'>
                             {unread > 99 ? "+99" : unread}

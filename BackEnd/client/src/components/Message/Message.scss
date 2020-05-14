@@ -189,12 +189,15 @@
 // }
 
 .message {
+    padding: 15px;
+
+
     $self: &;
 
     &__content {
         display: flex;
         max-width: 440px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         position: relative;
     }
 

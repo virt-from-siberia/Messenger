@@ -1,6 +1,6 @@
 //NOTE/: external
 import React, { useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 //NOTE/: internal
 import { useHttp } from "../../../hooks/http.hook";
 import openNotification from "../../../utils/helpers/openNotification";
@@ -10,7 +10,9 @@ import "./LoginForm.scss";
 import { Form, Input, Button, Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
+
 export const LoginForm = () => {
+
     const auth = useContext(AuthContext);
     const { loading, error, request, clearError } = useHttp();
 
@@ -40,6 +42,9 @@ export const LoginForm = () => {
                     title: "Вход успешно ",
                 });
             }
+
+
+
         } catch (err) {}
     };
 

@@ -1,6 +1,6 @@
 //NOTE/: external
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 //NOTE/: internal
 import { useHttp } from "../../../hooks/http.hook";
 import openNotification from "../../../utils/helpers/openNotification";
@@ -41,6 +41,7 @@ const tailFormItemLayout = {
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 export const RegisterForm = () => {
+    const history = useHistory();
     const { loading, error, request, clearError } = useHttp();
     const [form] = Form.useForm();
 
@@ -68,6 +69,9 @@ export const RegisterForm = () => {
                     type: "success",
                     title: "Регистрация успешно ",
                 });
+                setTimeout(()=> {
+                    history.push("/login");
+                },1500)
             }
         } catch (err) {}
     };

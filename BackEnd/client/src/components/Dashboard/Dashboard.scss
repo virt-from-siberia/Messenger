@@ -1,0 +1,172 @@
+.dashboard {
+    height: 100%;
+    overflow: hidden;
+    // width: 280px;
+
+    display: flex;
+
+    &-social {
+        width: 60px;
+        color: white;
+        padding-top: 20px;
+        background: #0d1927;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .hamburger {
+            margin-top: 9px;
+            margin-bottom: 25px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .social-block {
+            &-item {
+                margin: 20px 0;
+                opacity: 0.6;
+                transition: 0.3s;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: 1;
+                }
+
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
+
+    &-body {
+        width: 200px;
+        background-image: linear-gradient(
+            to left,
+            #0d1927,
+            #0f1b2a,
+            #121e2d,
+            #142031,
+            #172334
+        );
+        padding-top: 20px;
+        padding: 20px;
+        box-shadow: -6px 0px 3px -4px rgba(0, 0, 0, 0.35);
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 20px;
+
+        &-invite {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 5px;
+            border-radius: 50%;
+        }
+    }
+
+    &__infoblock {
+        &-messages {
+            display: flex;
+            justify-content: space-between;
+            line-height: 25px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            .messages {
+                color: white;
+                font-size: 14px;
+
+                li {
+                    opacity: 0.5;
+                    transition: 0.3s;
+
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .counter {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 10px;
+                li {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+
+        &-groups {
+            display: flex;
+            justify-content: space-between;
+            line-height: 25px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            .groups {
+                color: white;
+                font-size: 14px;
+
+                li {
+                    opacity: 0.6;
+                    transition: 0.5s;
+
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.9;
+                    }
+                }
+            }
+            .counter {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 10px;
+                li {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+
+        &-settings {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            line-height: 25px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            .settings {
+                color: white;
+                font-size: 14px;
+
+                &-item {
+                    width: 150px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1px 5px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        cursor: pointer;
+                        background: rgb(61, 61, 109);
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

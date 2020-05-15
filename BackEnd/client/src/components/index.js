@@ -8,3 +8,4 @@ export { default as AvatarDialogs } from "./AvatarDialogs";
 export { default as Dialogs } from "./Dialogs";
 export { default as Status } from "./Status";
 export { default as ChatInput } from "./ChatInput";
+export { default as Dashboard } from "./Dashboard";

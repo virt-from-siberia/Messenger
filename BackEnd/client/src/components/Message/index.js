@@ -153,6 +153,7 @@ const Message = ({
                         <div className='message__attachments'>
                             {attachments.map((item, index) => (
                                 <div
+                                    //BUG: Поставить id  вместо index
                                     key={index}
                                     className='message__attachments-item'
                                 >

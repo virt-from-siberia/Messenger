@@ -4,7 +4,8 @@ import { useHistory } from "react-router-dom";
 
 //NOTE/: internal
 import { AuthContext } from "../../../context/AuthContext";
-import { Message, Dialogs, Status } from "../../../components";
+import { Message, Status, Dashboard } from "../../../components";
+import { Dialogs } from "../../../containers";
 import "./Home.scss";
 
 //NOTE/: ant library --->
@@ -27,9 +28,11 @@ const Home = () => {
     };
     return (
         <div className='home'>
-            {/*<div className='contact-list'></div>*/}
-
             <div className='chat'>
+                {/* Important_NOTE///:  DASHBOARD*/}
+                <Dashboard />
+
+                {/* Important_NOTE///: SIDEBAR*/}
                 <div className='chat__sidebar'>
                     <div className='chat__sidebar-header'>
                         <div>
@@ -39,89 +42,88 @@ const Home = () => {
                         <FormOutlined />
                     </div>
 
-                    {/* //NOTE/: Dialogs ============> */}
-
+                    {/* Important_NOTE///:  DIALOGS*/}
                     <div className='chat__sidebar-dialogs'>
                         <Dialogs
                             userId={0}
                             items={[
                                 {
-                                    "_id": "1",
-                                    "text":
+                                    _id: "1",
+                                    text:
                                         "We are the champions!!! Our frands and we need to improuve our skills",
-                                    "isRead": false,
-                                    "created_at": "Wed May 13 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 1,
-                                        "fullname": "Aleksey Elchin",
-                                        "avatar": null,
-                                        "isOnline": true,
-                                    }
+                                    isRead: false,
+                                    created_at: "Wed May 13 2020 12:46:19 ",
+                                    user: {
+                                        _id: 1,
+                                        fullname: "Aleksey Elchin",
+                                        avatar: null,
+                                        isOnline: true,
+                                    },
                                 },
                                 {
-                                    "_id": "2",
-                                    "text":
-                                        "We are the champions!!! Our ",
-                                    "isRead": false,
-                                    "created_at": "Wed May 11 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 2,
-                                        "fullname": "Maksim Elchin",
-                                        "avatar": "https://sun9-2.userapi.com/c858224/v858224987/1cd45f/wS-2xDSX9t8.jpg?ava=1",
-                                        "isOnline": true
-                                    }
+                                    _id: "2",
+                                    text: "We are the champions!!! Our ",
+                                    isRead: false,
+                                    created_at: "Wed May 11 2020 12:46:19 ",
+                                    user: {
+                                        _id: 2,
+                                        fullname: "Maksim Elchin",
+                                        avatar:
+                                            "https://sun9-2.userapi.com/c858224/v858224987/1cd45f/wS-2xDSX9t8.jpg?ava=1",
+                                        isOnline: true,
+                                    },
                                 },
                                 {
-                                    "_id": "3",
-                                    "text":
-                                        " we need to improuve our skills",
-                                    "isRead": true,
-                                    "created_at": "Wed May 13 2020 11:26:19 ",
-                                    "user": {
-                                        "_id": 3,
-                                        "fullname": "Ivan Elchin",
-                                        "avatar": null,
-                                        "isOnline": false
-                                    }
+                                    _id: "3",
+                                    text: " we need to improuve our skills",
+                                    isRead: true,
+                                    created_at: "Wed May 13 2020 11:26:19 ",
+                                    user: {
+                                        _id: 3,
+                                        fullname: "Ivan Elchin",
+                                        avatar: null,
+                                        isOnline: false,
+                                    },
                                 },
                                 {
-                                    "_id": "4",
-                                    "text":
+                                    _id: "4",
+                                    text:
                                         " Our frands and we need to improuve our skills",
-                                    "isRead": true,
-                                    "created_at": "Wed May 13 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 4,
-                                        "fullname": "Daneil Elchin",
-                                        "avatar": "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1",
-                                        "isOnline": false
-                                    }
+                                    isRead: true,
+                                    created_at: "Wed May 13 2020 12:46:19 ",
+                                    user: {
+                                        _id: 4,
+                                        fullname: "Daneil Elchin",
+                                        avatar:
+                                            "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1",
+                                        isOnline: false,
+                                    },
                                 },
                                 {
-                                    "_id": "5",
-                                    "text":
+                                    _id: "5",
+                                    text:
                                         "We are the champions!!! Our frands and we need to improuve our skills",
-                                    "isRead": true,
-                                    "created_at": "Wed May 13 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 5,
-                                        "fullname": "Aleksey Elchin",
-                                        "avatar": null,
-                                        "isOnline": true
-                                    }
+                                    isRead: true,
+                                    created_at: "Wed May 13 2020 12:46:19 ",
+                                    user: {
+                                        _id: 5,
+                                        fullname: "Aleksey Elchin",
+                                        avatar: null,
+                                        isOnline: true,
+                                    },
                                 },
                                 {
-                                    "_id": "6",
-                                    "text":
+                                    _id: "6",
+                                    text:
                                         "We are the champions!!! Our frands and we need to improuve our skills",
-                                    "isRead": true,
-                                    "created_at": "Wed May 13 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 6,
-                                        "fullname": "Yaroslav Elchin",
-                                        "avatar": null,
-                                        "isOnline": true,
-                                    }
+                                    isRead: true,
+                                    created_at: "Wed May 13 2020 12:46:19 ",
+                                    user: {
+                                        _id: 6,
+                                        fullname: "Yaroslav Elchin",
+                                        avatar: null,
+                                        isOnline: true,
+                                    },
                                 },
                                 {
                                     _id: Math.random(),
@@ -215,75 +217,76 @@ const Home = () => {
                                     },
                                 },
                                 {
-                                    "_id": "7",
-                                    "text":
+                                    _id: "7",
+                                    text:
                                         "We are the champions!!! Our frands and we need to improuve our skills",
-                                    "isRead": true,
-                                    "created_at": "Wed May 13 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 7,
-                                        "fullname": "Aleksey Elchin",
-                                        "avatar": null,
-                                        "isOnline": true,
-                                    }
+                                    isRead: true,
+                                    created_at: "Wed May 13 2020 12:46:19 ",
+                                    user: {
+                                        _id: 7,
+                                        fullname: "Aleksey Elchin",
+                                        avatar: null,
+                                        isOnline: true,
+                                    },
                                 },
                                 {
-                                    "_id": "8",
-                                    "text":
+                                    _id: "8",
+                                    text:
                                         "We are the champions!!! Our frands and we need to improuve our skills",
-                                    "isRead": true,
-                                    "created_at": "Wed May 13 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 8,
-                                        "fullname": "Aleksey Elchin",
-                                        "avatar": null,
-                                        "isOnline": true,
-                                    }
+                                    isRead: true,
+                                    created_at: "Wed May 13 2020 12:46:19 ",
+                                    user: {
+                                        _id: 8,
+                                        fullname: "Aleksey Elchin",
+                                        avatar: null,
+                                        isOnline: true,
+                                    },
                                 },
                                 {
-                                    "_id": "9",
-                                    "text":
+                                    _id: "9",
+                                    text:
                                         "We are the champions!!! Our frands and we need to improuve our skills",
-                                    "isRead": true,
-                                    "created_at": "Wed May 13 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 9,
-                                        "fullname": "Michael Elchin",
-                                        "avatar": null,
-                                        "isOnline": true,
-                                    }
+                                    isRead: true,
+                                    created_at: "Wed May 13 2020 12:46:19 ",
+                                    user: {
+                                        _id: 9,
+                                        fullname: "Michael Elchin",
+                                        avatar: null,
+                                        isOnline: true,
+                                    },
                                 },
                                 {
-                                    "_id": "10",
-                                    "text":
+                                    _id: "10",
+                                    text:
                                         "We are the champions!!! Our frands and we need to improuve our skills",
-                                    "isRead": true,
-                                    "created_at": "Wed May 13 2020 12:46:19 ",
-                                    "user": {
-                                        "_id": 10,
-                                        "fullname": "Aleksey Elchin",
-                                        "avatar": null,
-                                        "isOnline": true,
-                                    }
-                                }
-
-
+                                    isRead: true,
+                                    created_at: "Wed May 13 2020 12:46:19 ",
+                                    user: {
+                                        _id: 10,
+                                        fullname: "Aleksey Elchin",
+                                        avatar: null,
+                                        isOnline: true,
+                                    },
+                                },
                             ]}
                         />
                     </div>
                 </div>
 
+                {/* Important_NOTE///:  MESSAGES*/}
                 <div className='chat__dialog'>
                     <div className='chat__dialog-header'>
                         <div></div>
                         <div className='chat__dialog-header-center'>
-                            <b className='chat__dialog-username'>Aleksey Elchin</b>
+                            <b className='chat__dialog-username'>
+                                Aleksey Elchin
+                            </b>
                             {/*<div className='chat__dialog-status'>*/}
                             {/*    <div className='status status--online'>*/}
                             {/*        online*/}
                             {/*    </div>*/}
                             {/*</div>*/}
-                            <Status online={false} />
+                            <Status online={true} />
                         </div>
                         <div>
                             <BgColorsOutlined
@@ -299,8 +302,8 @@ const Home = () => {
                             />
                         </div>
                     </div>
-
-                    <div className="chat__dialog-messages">
+                    {/* Important_NOTE///:  MESSAGES*/}
+                    <div className='chat__dialog-messages'>
                         <Message
                             avatar={
                                 "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
@@ -434,18 +437,14 @@ const Home = () => {
                             audio='https://notificationsounds.com/soundfiles/38913e1d6a7b94cb0f55994f679f5956/file-6c_early-sunrise-song.mp3'
                         />
                     </div>
-                    <div className="chat__dialog-input">
+                    {/* Important_NOTE///:  CHAT INPUT*/}
+                    <div className='chat__dialog-input'>
                         <ChatInput />
                     </div>
-
                 </div>
-
             </div>
 
-            <div className='chat-body'>
-                {/* // NOTE/: */}
-
-            </div>
+            <div className='chat-body'>{/* // NOTE/: */}</div>
             <div className='current-dialog'></div>
         </div>
     );

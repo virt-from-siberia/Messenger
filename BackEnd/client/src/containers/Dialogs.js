@@ -19,9 +19,6 @@ const Dialogs = ({
     const [filtered, setFiltredItems] = useState(Array.from(items));
     // const [filtered, setFiltredItems] = useState([...items]);
 
-    console.log("!!!!!");
-    console.log(items);
-
     const onChangeInput = (value) => {
         setFiltredItems(
             items.filter(

@@ -1,6 +1,6 @@
 //NOTE/: external
 import React, { useEffect, useContext } from "react";
-import {Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 //NOTE/: internal
 import { useHttp } from "../../../hooks/http.hook";
 import openNotification from "../../../utils/helpers/openNotification";
@@ -10,12 +10,11 @@ import "./LoginForm.scss";
 import { Form, Input, Button, Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
-
 export const LoginForm = () => {
-
     const auth = useContext(AuthContext);
     const { loading, error, request, clearError } = useHttp();
 
+    //NOTE/: Отслеживаем ERRORS через useEffect
     useEffect(() => {
         if (error) {
             console.log(error);
@@ -27,13 +26,16 @@ export const LoginForm = () => {
         }
 
         clearError();
+        //NOTE/: Кладем в зависимость error что бы  хук отработал при ошибке
     }, [error, clearError]);
 
     const loginHandler = async (values) => {
         try {
             const data = await request("/api/auth/login", "POST", {
+                //NOTE/: Передаем данные на сервер
                 ...values,
             });
+
             auth.login(data.token, data.userId);
             if (!error) {
                 openNotification({
@@ -42,9 +44,6 @@ export const LoginForm = () => {
                     title: "Вход успешно ",
                 });
             }
-
-
-
         } catch (err) {}
     };
 

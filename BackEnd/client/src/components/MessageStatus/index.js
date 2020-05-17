@@ -7,8 +7,6 @@ import checkedSVG from "../../assets/img/readed.svg";
 import noReadedSVG from "../../assets/img/noreaded.svg";
 
 const MessageStatus = ({ isMe, isReaded }) => {
-    //FIXME: CONSOLE LOG ===========>
-    console.log(isMe);
     if (isMe && isReaded) {
         return (
             <img

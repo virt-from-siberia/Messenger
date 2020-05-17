@@ -39,13 +39,16 @@
 
     &__item {
         border-left: 4px solid transparent;
+
         &:hover {
             cursor: pointer;
-            background-color: #142f58;
-            border-left: 4px solid #2b80ff;
+            background-color: #2b80ff;
+            border-left: 4px solid #00cf23;
+            color: white;
         }
         &.active {
-            background-color: #2b80ff;
+            background-color: #0d1927;
+            border-left: 4px solid #00cf23;
             color: $white;
         }
 

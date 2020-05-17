@@ -1,21 +1,19 @@
 [
   {
-  "_id": "1",
-  "text":
-  "We are the champions!!! Our frands and we need to improuve our skills",
-  "isRead": true,
-  "created_at": "Wed May 13 2020 12:46:19 ",
-  "user": {
-    "_id": 1,
-    "fullname": "Aleksey Elchin",
-    "avatar": null,
-    "isOnline": true,
-  }
- },
+    "_id": "1",
+    "text": "We are the champions!!! Our frands and we need to improuve our skills",
+    "isRead": true,
+    "created_at": "Wed May 13 2020 12:46:19 ",
+    "user": {
+      "_id": 1,
+      "fullname": "Aleksey Elchin",
+      "avatar": null,
+      "isOnline": true,
+    }
+  },
   {
     "_id": "2",
-    "text":
-    "We are the champions!!! Our ",
+    "text": "We are the champions!!! Our ",
     "isRead": false,
     "created_at": "Wed May 11 2020 12:46:19 ",
     "user": {
@@ -27,8 +25,7 @@
   },
   {
     "_id": "3",
-    "text":
-    " we need to improuve our skills",
+    "text": " we need to improuve our skills",
     "isRead": true,
     "created_at": "Wed May 13 2020 11:26:19 ",
     "user": {
@@ -40,8 +37,7 @@
   },
   {
     "_id": "4",
-    "text":
-    " Our frands and we need to improuve our skills",
+    "text": " Our frands and we need to improuve our skills",
     "isRead": true,
     "created_at": "Wed May 13 2020 12:46:19 ",
     "user": {
@@ -53,8 +49,7 @@
   },
   {
     "_id": "5",
-    "text":
-    "We are the champions!!! Our frands and we need to improuve our skills",
+    "text": "We are the champions!!! Our frands and we need to improuve our skills",
     "isRead": true,
     "created_at": "Wed May 13 2020 12:46:19 ",
     "user": {
@@ -66,8 +61,7 @@
   },
   {
     "_id": "6",
-    "text":
-    "We are the champions!!! Our frands and we need to improuve our skills",
+    "text": "We are the champions!!! Our frands and we need to improuve our skills",
     "isRead": true,
     "created_at": "Wed May 13 2020 12:46:19 ",
     "user": {
@@ -79,8 +73,7 @@
   },
   {
     "_id": "7",
-    "text":
-    "We are the champions!!! Our frands and we need to improuve our skills",
+    "text": "We are the champions!!! Our frands and we need to improuve our skills",
     "isRead": true,
     "created_at": "Wed May 13 2020 12:46:19 ",
     "user": {
@@ -92,8 +85,7 @@
   },
   {
     "_id": "8",
-    "text":
-    "We are the champions!!! Our frands and we need to improuve our skills",
+    "text": "We are the champions!!! Our frands and we need to improuve our skills",
     "isRead": true,
     "created_at": "Wed May 13 2020 12:46:19 ",
     "user": {
@@ -105,8 +97,7 @@
   },
   {
     "_id": "9",
-    "text":
-    "We are the champions!!! Our frands and we need to improuve our skills",
+    "text": "We are the champions!!! Our frands and we need to improuve our skills",
     "isRead": true,
     "created_at": "Wed May 13 2020 12:46:19 ",
     "user": {
@@ -118,8 +109,7 @@
   },
   {
     "_id": "10",
-    "text":
-    "We are the champions!!! Our frands and we need to improuve our skills",
+    "text": "We are the champions!!! Our frands and we need to improuve our skills",
     "isRead": true,
     "created_at": "Wed May 13 2020 12:46:19 ",
     "user": {

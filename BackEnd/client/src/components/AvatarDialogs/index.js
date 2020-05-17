@@ -11,8 +11,7 @@ const AvatarDialogs = ({ user }) => {
         return <img className='avatar' src={user.avatar} alt='avatar' />;
     } else {
         const firstChar = user.fullname.slice(0, 1);
-        //FIXME: CONSOLE LOG ===========>
-        console.log(firstChar);
+
         return (
             <div>
                 <p className='name-dialogs'>{firstChar}</p>

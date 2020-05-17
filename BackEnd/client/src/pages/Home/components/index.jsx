@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 //NOTE/: internal
 import { AuthContext } from "../../../context/AuthContext";
-import { Message, Status, Dashboard } from "../../../components";
+import { Messages, Status, Dashboard } from "../../../components";
 import { Dialogs } from "../../../containers";
 import "./Home.scss";
 
@@ -30,7 +30,7 @@ const Home = () => {
         <div className='home'>
             <div className='chat'>
                 {/* Important_NOTE///:  DASHBOARD*/}
-                <Dashboard />
+                {/* <Dashboard /> */}
 
                 {/* Important_NOTE///: SIDEBAR*/}
                 <div className='chat__sidebar'>
@@ -304,138 +304,7 @@ const Home = () => {
                     </div>
                     {/* Important_NOTE///:  MESSAGES*/}
                     <div className='chat__dialog-messages'>
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            text='hello how are you what do you need ?'
-                            date='Sat May 05 2020 13:1:28 GMT+0900'
-                        />
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            text='hello how are you what do you need ?'
-                            date='Sat May 05 2020 13:1:28 GMT+0900'
-                        />
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            text='hello how are you what do you need ?'
-                            date='Sat May 05 2020 13:1:28 GMT+0900'
-                        />
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            text='hello how are you what do you need ?'
-                            date='Sat May 05 2020 13:1:28 GMT+0900'
-                        />
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            text='hello how are you what do you need ?'
-                            date='Sat May 05 2020 13:1:28 GMT+0900'
-                        />
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            text='hello how are you what do you need ?'
-                            date='Sat May 05 2020 13:1:28 GMT+0900'
-                        />
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            text='hello how are you what do you need ?'
-                            date='Sat May 05 2020 13:1:28 GMT+0900'
-                        />
-
-                        <Message
-                            avatar={
-                                "https://sun1-86.userapi.com/5YDbNhS0f1mr4_7MP7QmdL6r8glHbacefDq6FA/-X64idwe4X4.jpg?ava=1"
-                            }
-                            text={
-                                "Hello How are you  asdasda asdasdas asd asdasdas asdasdasdas asdasdas asdasdas asdasd dasdasd aasasdasd "
-                            }
-                            date='Sat May 09 2020 13:11:28 GMT+0900'
-                            user={{}}
-                            isMe={true}
-                            isReaded={true}
-                            attachments={[
-                                {
-                                    filename: "image.jpg",
-                                    url:
-                                        "https://source.unsplash.com/100x100/?random=1&nature,water",
-                                },
-                                {
-                                    filename: "image.jpg",
-                                    url:
-                                        "https://source.unsplash.com/100x100/?random=2&nature,water",
-                                },
-                                {
-                                    filename: "image.jpg",
-                                    url:
-                                        "https://source.unsplash.com/100x100/?random=3&nature,water",
-                                },
-                                {
-                                    filename: "image.jpg",
-                                    url:
-                                        "https://source.unsplash.com/100x100/?random=3&nature,water",
-                                },
-                                {
-                                    filename: "image.jpg",
-                                    url:
-                                        "https://source.unsplash.com/100x100/?random=3&nature,water",
-                                },
-                                {
-                                    filename: "image.jpg",
-                                    url:
-                                        "https://source.unsplash.com/100x100/?random=3&nature,water",
-                                },
-                                {
-                                    filename: "image.jpg",
-                                    url:
-                                        "https://source.unsplash.com/100x100/?random=3&nature,water",
-                                },
-                            ]}
-                        />
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            isTyping={true}
-                        />
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            attachments={[
-                                {
-                                    filename: "image.jpg",
-                                    url:
-                                        "https://source.unsplash.com/100x100/?random=1&nature,water",
-                                },
-                            ]}
-                            date='Sat May 09 2020 18:11:28 GMT+0900'
-                        />
-                        <Message
-                            date='Sat May 09 2020 18:11:28 GMT+0900'
-                            text='hi how are you ?'
-                            isMe={true}
-                            isReaded={false}
-                        />
-
-                        <Message
-                            avatar={
-                                "https://sun9-28.userapi.com/c854424/v854424294/1bf2d6/H65Wk4n6aFk.jpg?ava=1"
-                            }
-                            date='Sat May 09 2020 18:11:28 GMT+0900'
-                            audio='https://notificationsounds.com/soundfiles/38913e1d6a7b94cb0f55994f679f5956/file-6c_early-sunrise-song.mp3'
-                        />
+                        <Messages />
                     </div>
                     {/* Important_NOTE///:  CHAT INPUT*/}
                     <div className='chat__dialog-input'>

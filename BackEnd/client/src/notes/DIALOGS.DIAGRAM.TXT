@@ -1,0 +1,10 @@
+dialogs : {
+    _id - id диалога
+    owner - создатель диалога
+    partner -  партнер диалога
+    created_at,
+    updated_at
+ }
+
+
+ message : 

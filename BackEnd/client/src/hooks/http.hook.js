@@ -19,11 +19,14 @@ export const useHttp = () => {
 
                 const data = await response.json();
 
+                //NOTE/: если поле ok не ок =)
                 if (!response.ok) {
+                    //NOTE/: если есть поле message вывести
                     throw new Error(data.message || "Что то пошло не так");
                 }
                 setLoading(false);
 
+                //NOTE/: если все хорошо возврашяем data
                 return data;
             } catch (err) {
                 setLoading(false);

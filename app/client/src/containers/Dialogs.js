@@ -1,14 +1,18 @@
 //NOTE/: external library --->
 import React, { useState, useEffect } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
 //NOTE/: Actions --->
-// import { dialogsActions } from "../redux/actions";
+import {
+    //NOTE/: Взять все диалоги
+    dialogsActions,
+} from "../redux/actions";
 
 //NOTE/: internal library --->
 import { Dialogs as BaseDialogs } from "../components";
 
 const Dialogs = ({
+    //NOTE/: fetchDialogs from actions
     fetchDialogs,
     items,
     currentDialogId,
@@ -40,7 +44,7 @@ const Dialogs = ({
         } else {
             setFiltredItems(items);
         }
-    }, [items]);
+    }, []);
 
     return (
         <BaseDialogs
@@ -53,6 +57,6 @@ const Dialogs = ({
         />
     );
 };
-export default Dialogs;
+// export default Dialogs;
 
-// export default connect(({ dialogs }) => dialogs, dialogsActions)(Dialogs);
+export default connect(({ dialogs }) => dialogs, dialogsActions)(Dialogs);

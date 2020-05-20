@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json({ extended: true }));
 
 app.use("/api/auth", require("./routes/auth.routes"));
+//NOTE/: FAKE JSON DIALOGS
+app.use("/api", require("./routes/fake.routes"));
 
 const PORT = config.get("post") || 5000;
 

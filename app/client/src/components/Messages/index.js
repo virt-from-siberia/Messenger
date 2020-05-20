@@ -12,7 +12,23 @@ import { Message } from "../";
 import "./Messages.scss";
 
 const Messages = ({ blockRef, isLoading, items }) => {
-    const antIcon = <LoadingOutlined style={{ fontSize: 35 }} spin />;
+    //--------- dev console ----------//
+    console.log(
+        "%c Components/Messages:GET_PROPS'",
+        "color: black; font-weight: bold; background: yellow"
+    );
+    console.log(items);
+    //--------- dev console ----------//
+
+    const antIcon = (
+        <LoadingOutlined
+            style={{
+                fontSize: 35,
+            }}
+            spin
+        />
+    );
+
     return (
         <div
             ref={blockRef}
@@ -20,6 +36,7 @@ const Messages = ({ blockRef, isLoading, items }) => {
                 "messages--loading": isLoading,
             })}
         >
+            {/* // NOTE/: Если идет загрузка показывать spinner ---> */}
             {isLoading ? (
                 // <Spin size='large' tip='Загрузка сообшений' />
                 <Spin indicator={antIcon} />

@@ -93,7 +93,7 @@ const MessageAudio = ({ audioSrc }) => {
 };
 
 const Message = ({
-    avatar,
+    // avatar,
     user,
     text,
     date,
@@ -103,6 +103,14 @@ const Message = ({
     attachments,
     isTyping,
 }) => {
+    //--------- dev console ----------//
+    console.log(
+        "%c Components/Message:GET_PROPS'",
+        "color: black; font-weight: bold; background: yellow"
+    );
+    console.log(user.avatar);
+    //--------- dev console ----------//
+
     return (
         <div
             className={classNames("message", {
@@ -118,7 +126,7 @@ const Message = ({
                 <MessageStatus isMe={isMe} isReaded={isReaded} />
                 <div className='message__avatar'>
                     {/* //BUG:/// */}
-                    <Avatar avatar={avatar} />
+                    <Avatar avatar={user.avatar} />
                     {/* <img src={avatar} alt={`Avatar ${user.fullname}`} /> */}
                 </div>
                 <div className='message__info'>

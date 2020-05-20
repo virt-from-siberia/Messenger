@@ -3,20 +3,18 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 //NOTE/: Actions --->
-import {
-    //NOTE/: Взять все диалоги
-    dialogsActions,
-} from "../redux/actions";
+import { dialogsActions } from "../redux/actions";
 
 //NOTE/: internal library --->
 import { Dialogs as BaseDialogs } from "../components";
 
 const Dialogs = ({
-    //NOTE/: fetchDialogs from actions
+    //NOTE/: fetchDialogs, setCurrentDialogId --> actions
     fetchDialogs,
+    setCurrentDialogId,
+    //NOTE/:----
     items,
     currentDialogId,
-    setCurrentDialogId,
     userId,
 }) => {
     const [inputValue, setValue] = useState("");
@@ -35,7 +33,6 @@ const Dialogs = ({
         setValue(value);
     };
 
-    //BUG:  ===========>
     //NOTE/: Get dialogs from server --->
     useEffect(() => {
         if (!items.length) {
@@ -44,7 +41,7 @@ const Dialogs = ({
         } else {
             setFiltredItems(items);
         }
-    }, []);
+    }, [items, fetchDialogs]);
 
     return (
         <BaseDialogs
@@ -57,6 +54,5 @@ const Dialogs = ({
         />
     );
 };
-// export default Dialogs;
 
 export default connect(({ dialogs }) => dialogs, dialogsActions)(Dialogs);

@@ -19,12 +19,17 @@ const getMessageTime = (created_at) => {
     }
 };
 
-const DialogItem = ({ user, message, unread, isMe }) => {
+const DialogItem = ({ user, message, unread, isMe, onSelect }) => {
+    //FIXME: CONSOLE LOG ===========>
+    // console.log(message);
     return (
         <div
             className={classNames("dialogs__item ", {
                 "dialogs__item--online": user.isOnline,
             })}
+            onClick={() => {
+                onSelect(message._id);
+            }}
         >
             <div className='dialogs__item-avatar'>
                 {/* <img src={user.avatar} alt={`${user.fullname} avatar}`} />*/}

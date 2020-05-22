@@ -5,8 +5,6 @@ const initialState = {
 };
 
 export default (state = initialState, { type, payload }) => {
-    //FIXME: CONSOLE LOG ===========>
-    // console.log(payload);
     switch (type) {
         case "DIALOGS:SET_ITEMS":
             return {

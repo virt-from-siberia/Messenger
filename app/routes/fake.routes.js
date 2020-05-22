@@ -19,7 +19,7 @@ const dialogs = [
     },
     {
         _id: "2",
-        text: "We are the champions!!! Our ",
+        text: "We are the champions!!! 😀 😀 😀 Our ",
         isRead: false,
         created_at: "Wed May 11 2020 12:46:19 ",
         user: {
@@ -58,7 +58,7 @@ const dialogs = [
     {
         _id: "5",
         text:
-            "We are the champions!!! Our frands and we need to improuve our skills",
+            "We are the champions!!! Our 😀 😀 😀 😀 😀 frands and we need to improuve our skills",
         isRead: true,
         created_at: "Wed May 13 2020 12:46:19 ",
         user: {
@@ -263,7 +263,7 @@ const message = [
     {
         _id: "6",
         text:
-            " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+            " Lorem ipsum dolor sit amet, consectetur adipiscing elit, 😀 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 😀 exercitation ullamco laboris",
         "created-at": "Sun Nov 03 1985 18:49:32",
         user: {
             _id: "qwe343453645e34546456t546",
@@ -276,7 +276,7 @@ const message = [
     {
         _id: "6",
         text:
-            " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+            " Lorem ipsum dolor sit amet, consectetur adipiscing elit,😀  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  😀 quis nostrud exercitation ullamco laboris",
         "created-at": "Sun Nov 03 1985 18:49:32",
         user: {
             _id: "qwe343453645e34546456t546",
@@ -289,7 +289,7 @@ const message = [
     {
         _id: "6",
         text:
-            " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+            " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  😀 😀veniam, quis nostrud exercitation ullamco laboris",
         "created-at": "Sun Nov 03 1985 18:49:32",
         user: {
             _id: "qwe343453645e34546456t546",

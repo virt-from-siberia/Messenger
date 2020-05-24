@@ -1,26 +1,36 @@
 const { Schema, model, Types } = require("mongoose");
 
-const schema = new Schema({
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    password: {
-        type: "String",
-        required: true,
-    },
-
-    //NOTE/: У каждого пользователя свой массив ссылок
-    links: [
-        {
-            //NOTE/: тип для линков. Types.ObjectId - ID от mongoDB
-            type: Types.ObjectId,
-            //NOTE/: Значение ref к какой коллекции мы привязываемся
-            //NOTE/: Привязываемся к коллекции Link
-            ref: "Link",
+const UserSchema = new Schema(
+    //NOTE/: Первый параметр обьект который содержит схему
+    {
+        email: {
+            type: String,
+            required: true,
+            unique: true,
         },
-    ],
-});
+        password: {
+            type: String,
+            required: true,
+        },
+        avatar: String,
+        fullname: {
+            type: String,
+            required: true,
+        },
+        confirmed: {
+            type: Boolean,
+            default: false,
+        },
+        confirm_hash: String,
+        last_seen: Date,
+    },
+    //NOTE/: Второй параметр это обьект, содержит конфигурацию схемы
+    {
+        //NOTE/: timestamps - true, Создавать два дополнительных поля :
+        //NOTE/: created_at, updated_at
+        timestamps: true,
+    }
+);
 
-module.exports = model("User", schema);
+//NOTE/: создаем модель User и экспортируемы
+module.exports = model("User", UserSchema);

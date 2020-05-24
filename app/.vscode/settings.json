@@ -1,6 +1,6 @@
 {
     "workbench.colorCustomizations": {
-        "activityBarBadge.background": "#06b9a5",
+        "activityBarBadge.background": "#00bfbf",
         "list.activeSelectionForeground": "#FFA000",
         "list.inactiveSelectionForeground": "#FFA000",
         "list.highlightForeground": "#FFA000",
@@ -18,23 +18,23 @@
         "breadcrumb.activeSelectionForeground": "#FFA000",
         "menu.selectionForeground": "#FFA000",
         "menubar.selectionForeground": "#FFA000",
-        "activityBar.activeBorder": "#06b9a5",
+        "activityBar.activeBorder": "#00bfbf",
         "editor.findMatchBorder": "#FFA000",
         "selection.background": "#FFA00040",
-        "activityBar.activeBackground": "#fbed80",
+        "activityBar.activeBackground": "#ffff33",
+        "activityBar.background": "#ffff33",
         "activityBar.foreground": "#15202b",
         "activityBar.inactiveForeground": "#15202b99",
         "activityBarBadge.foreground": "#15202b",
-        "statusBar.background": "#f9e64f",
-        "statusBar.border": "#f9e64f",
+        "statusBar.background": "#ffff00",
+        "statusBar.border": "#ffff00",
         "statusBar.foreground": "#15202b",
-        "statusBarItem.hoverBackground": "#f7df1e",
-        "titleBar.border": "#f9e64f",
-        "titleBar.inactiveBackground": "#f9e64f99",
-        "titleBar.inactiveForeground": "#15202b99",
-        "activityBar.background": "#fbed80",
-        "titleBar.activeBackground": "#f9e64f",
-        "titleBar.activeForeground": "#15202b"
+        "statusBarItem.hoverBackground": "#cccc00",
+        "titleBar.activeBackground": "#ffff00",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.border": "#ffff00",
+        "titleBar.inactiveBackground": "#ffff0099",
+        "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#f9e64f"
+    "peacock.color": "yellow"
 }

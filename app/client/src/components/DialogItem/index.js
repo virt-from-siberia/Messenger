@@ -19,13 +19,21 @@ const getMessageTime = (created_at) => {
     }
 };
 
-const DialogItem = ({ user, message, unread, isMe, onSelect }) => {
+const DialogItem = ({
+    user,
+    message,
+    unread,
+    isMe,
+    onSelect,
+    currentDialogId,
+}) => {
     //FIXME: CONSOLE LOG ===========>
     // console.log(message);
     return (
         <div
             className={classNames("dialogs__item ", {
                 "dialogs__item--online": user.isOnline,
+                "dialogs__item--selected": currentDialogId === message._id,
             })}
             onClick={() => {
                 onSelect(message._id);

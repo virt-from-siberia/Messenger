@@ -1,6 +1,6 @@
 //NOTE/: external
 import React, { useEffect } from "react";
-import {Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 //NOTE/: internal
 import { useHttp } from "../../../hooks/http.hook";
 import openNotification from "../../../utils/helpers/openNotification";
@@ -69,9 +69,9 @@ export const RegisterForm = () => {
                     type: "success",
                     title: "Регистрация успешно ",
                 });
-                setTimeout(()=> {
+                setTimeout(() => {
                     history.push("/login");
-                },1500)
+                }, 1500);
             }
         } catch (err) {}
     };
@@ -161,7 +161,7 @@ export const RegisterForm = () => {
                         </Form.Item>
 
                         <Form.Item
-                            name='nickname'
+                            name='fullname'
                             label={
                                 <span>
                                     Nickname&nbsp;

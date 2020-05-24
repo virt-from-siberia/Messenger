@@ -23,9 +23,6 @@ router.post(
     ],
     async (req, res) => {
         try {
-            //FIXME: CONSOLE LOG ===========>
-            console.log(" Body : ", req.body);
-
             //NOTE/: Передаем express-validator req для валидации, все ошибки будут сложины в const errors
 
             const errors = validationResult(req);
@@ -39,7 +36,7 @@ router.post(
                 });
             }
 
-            const { email, password } = req.body;
+            const { email, password, fullname } = req.body;
             //NOTE/: Логика регистрации
             //NOTE/: Проверка есть ли такой полььзователь в базе
             //NOTE/: Ожидаем пока модель полььзователя будет найдена по Email
@@ -65,6 +62,7 @@ router.post(
             const user = new User({
                 email: email,
                 password: hashedPassword,
+                fullname: fullname,
             });
             //NOTE/: ждем пока пользователь сохранится
             await user.save();

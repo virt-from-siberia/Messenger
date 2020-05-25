@@ -25,6 +25,9 @@ app.use("/user", require("./routes/user.routes"));
 //NOTE/: Создать диалог, с параметрами author и partner
 app.use("/dialogs", require("./routes/dialogs.routes"));
 
+//NOTE/: Получить все сообшения  по id диалогу
+app.use("/messages", require("./routes/messages.routes"));
+
 const PORT = config.get("post") || 5000;
 
 async function start() {

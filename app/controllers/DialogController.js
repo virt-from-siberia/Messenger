@@ -1,21 +1,23 @@
 const express = require("express");
 const DialogModel = require("../models/Dialog");
+// const UserModel = require("../models/Dialog");
 
 class DialogController {
     //Получить диалог по id автора
     index(req, res) {
-        //NOTE/: берем id автора из req.params.id
         const authorId = req.params.id;
-        //NOTE/: Делаем запрос к бд, найти пользователя с таким id
+
         DialogModel.find({ author: authorId })
-            .then((dialogs) => {
-                res.json(dialogs);
-            })
-            .catch((err) => {
-                //NOTE/: Если диалоги не найден
-                res.status(404).json({
-                    message: "Диалоги не найден",
-                });
+            //NOTE/: populate  "author" - получить автора диалога с данными
+            //NOTE/: populate  "partner" - получить партнера диалога с данными
+            .populate(["author", "partner"])
+            .exec(function (err, dialogs) {
+                if (err) {
+                    return res.status(404).json({
+                        message: "dialog not found",
+                    });
+                }
+                return res.json(dialogs);
             });
     }
 
@@ -34,12 +36,28 @@ class DialogController {
 
         //NOTE/: Сохраняем диалог в бд
         dialog
-            .save(obj)
-            .then(() => {
-                res.json();
+            .save()
+            .then((data) => {
+                res.json(data);
             })
             .catch((reason) => {
                 res.json(reason);
+            });
+    }
+    delete(req, res) {
+        const id = req.params.id;
+        DialogModel.findByIdAndRemove({ _id: id })
+            .then((dialog) => {
+                if (dialog) {
+                    res.json({
+                        message: "Диалог удалён",
+                    });
+                }
+            })
+            .catch(() => {
+                res.json({
+                    message: "Диалог не найден",
+                });
             });
     }
 }

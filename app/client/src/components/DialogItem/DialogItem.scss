@@ -42,14 +42,11 @@
 
         &:hover {
             cursor: pointer;
-            // background-color: #4e94fd;
-            // border-left: 4px solid #00cf23;
             background-color: #f7f8f9;
             color: black;
         }
         &.active {
-            background-color: #0d1927;
-            border-left: 4px solid #00cf23;
+            border-left: 4px solid #4e94fd;
             color: $white;
         }
 

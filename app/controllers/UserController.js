@@ -3,7 +3,7 @@ const UserModel = require("../models/User");
 
 class UserController {
     //Получить пользователя по id
-    async index(req, res) {
+    async show(req, res) {
         //NOTE/: берем id пользователя из req.params.id
         const id = req.params.id;
         //NOTE/: Делаем запрос к бд, найти пользователя с таким id
@@ -23,11 +23,9 @@ class UserController {
         //NOTE/: берем id пользователя из req.params.id
         const id = req.params.id;
         //NOTE/: Делаем запрос к бд, найти пользователя с таким id
-        const user = await UserModel.findByIdAndRemove(id);
+        const user = await UserModel.findOneAndRemove({ _id: id });
 
         if (user) {
-            console.log(user);
-
             res.json({
                 message: "Пользователь удален",
             });

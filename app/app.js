@@ -16,10 +16,14 @@ app.use("/api", require("./routes/fake.routes"));
 //NOTE/: test request
 app.use("/api", require("./routes/test.routes"));
 
-//NOTE/: :id Получить пользователя по id
-//NOTE/: / Получить информацию о себе
+//NOTE/:  Получить пользователя по id
+//NOTE/:  Получить информацию о себе
 //NOTE/: Удалить пользователя
 app.use("/user", require("./routes/user.routes"));
+
+//NOTE/: Получить все диалоги пользователя по id
+//NOTE/: Создать диалог, с параметрами author и partner
+app.use("/dialogs", require("./routes/dialogs.routes"));
 
 const PORT = config.get("post") || 5000;
 
@@ -29,7 +33,7 @@ async function start() {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,
-            useFindAndModify: true,
+            useFindAndModify: false,
         });
         app.listen(5000, () => {
             console.log(`:::APP HAS BEEN STARTED::: on POST :  ${PORT}`);

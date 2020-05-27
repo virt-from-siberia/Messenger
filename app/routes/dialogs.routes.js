@@ -5,7 +5,7 @@ const router = Router();
 const Dialog = new DialogController();
 
 //NOTE/:  Получить все диалоги пользователя по id
-router.get("/:id", Dialog.index);
+router.get("", Dialog.index);
 
 //NOTE/:  Создать диалог, с параметрами author и partner
 router.post("", Dialog.create);

@@ -22,7 +22,11 @@ const UserSchema = new Schema(
             default: false,
         },
         confirm_hash: String,
-        last_seen: Date,
+        last_seen: {
+            type: Date,
+            //NOTE/: Когда пользователь создается присваетвается дата
+            default: new Date(),
+        },
     },
     //NOTE/: Второй параметр это обьект, содержит конфигурацию схемы
     {

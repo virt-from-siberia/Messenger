@@ -4,9 +4,22 @@ const MessageSchema = new Schema(
     //NOTE/: Первый параметр обьект который содержит схему
     {
         text: { type: String, required: true },
-        unread: Boolean,
+        unread: {
+            type: Boolean,
+            default: false,
+        },
         //NOTE/: lastMessage последнее сообщение принемает параметр id диалога
-        lastMessage: { type: Schema.Types.ObjectId, ref: "Dialog" },
+        dialog: {
+            type: Schema.Types.ObjectId,
+            ref: "Dialog",
+            required: true,
+        },
+        //NOTE/: id пользователя
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
+        },
     },
     //NOTE/: Второй параметр это обьект, содержит конфигурацию схемы
     {

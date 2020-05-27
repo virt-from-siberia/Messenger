@@ -7,7 +7,7 @@ class MessageController {
         //NOTE/: берем id диалога из req.params.id
         const dialogId = req.query.dialog;
 
-        //NOTE/: Делаем запрос к бд, найти пользователя с таким id
+        //NOTE/: Делаем запрос к бд, найти диалог с таким id
         MessageModel.find({ dialog: dialogId })
             .populate(["dialog"])
             .exec(function (err, messages) {
@@ -19,27 +19,55 @@ class MessageController {
                 return res.json(messages);
             });
     }
-    //Удолить пользователя по id
-    //  delete(req, res) {
-    //     //NOTE/: берем id пользователя из req.params.id
-    //     const id = req.params.id;
-    //     //NOTE/: Делаем запрос к бд, найти пользователя с таким id
-    //     const user = await UserModel.findOneAndRemove({ _id: id });
+    //NOTE/: создать диалог
+    //NOTE/: привязываем сообщение к конкретному диалогу челез id диалога dialog_id
+    create(req, res) {
+        console.log("REQUEST USER : ", req.user);
+        //BUG: Временный ID пользователяы
+        const userId = "5eca3261568eea35740d7bc8";
 
-    //     if (user) {
-    //         res.json({
-    //             message: "Пользователь удален",
-    //         });
-    //     } else {
-    //         //NOTE/: Если пользователь не найден
-    //         res.status(404).json({
-    //             message: "Ошибка пользователь не найден",
-    //         });
-    //     }
-    // }
+        const postData = {
+            //NOTE/: Текст диалога
+            text: req.body.text,
+            //NOTE/: id пользователя
+            user: userId,
+            //NOTE/: id диалога к которому принадлежит сообщение
+            dialog: req.body.dialog_id,
+        };
 
-    // //NOTE/: Получить информацию о себе
-    // getMe() {}
+        const message = new MessageModel(postData);
+
+        message
+            .save()
+            .then((obj) => {
+                res.json(obj);
+            })
+            .catch((err) => {
+                res.json(err);
+            });
+    }
+
+    delete(req, res) {
+        const id = req.params.id;
+
+        MessageModel.findOneAndRemove({ _id: id })
+            .then((message) => {
+                if (message) {
+                    res.json({
+                        message: "Сообщение удалено",
+                    });
+                } else {
+                    res.json({
+                        message: "Сообщение  не найдено",
+                    });
+                }
+            })
+            .catch(() => {
+                res.json({
+                    message: "Что то пошло не так",
+                });
+            });
+    }
 }
 
 module.exports = MessageController;

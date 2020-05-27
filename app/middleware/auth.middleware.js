@@ -3,6 +3,8 @@ const config = require("config");
 
 //NOTE/: Перехват параметров req, res, next -> продолжение
 module.exports = (req, res, next) => {
+    console.log("AUTHMIDDLEWARE : ", req.headers.authorization);
+
     //NOTE/: метод доступен в rest api, просто проверяет доступность сервера
     if (req.method === "OPTIONS") {
         //NOTE/: если это OPTIONS то возвращяем next
@@ -28,7 +30,8 @@ module.exports = (req, res, next) => {
         //NOTE/: если токен есть то раскодируем
         //NOTE/: verify() метод позволяет раскодировать токен
         //NOTE/: Вторым параметром указываем секретный ключь через config.get()
-        const decoded = jwt.verify(token, config.get(jwtSecret));
+
+        const decoded = jwt.verify(token, config.get("jwtSecret"));
 
         //NOTE/: Получаем раскодированный токен, ложим его в обьект req
         //NOTE/: Создаем в обьекте req поле user и ложим туда раскодированный токен
@@ -39,6 +42,7 @@ module.exports = (req, res, next) => {
 
         next();
     } catch (err) {
+        console.log(err);
         res.status(401).json({
             message: "Нет авторизации",
         });

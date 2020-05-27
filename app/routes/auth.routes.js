@@ -106,7 +106,7 @@ router.post(
             //NOTE/: Получаем поля email, password из req.body
             const { email, password } = req.body;
 
-            //NOTE/: Ишем ОДНОГО(findOne) полььзователя d в db
+            //NOTE/: Ишем ОДНОГО(findOne) пользователя d в db
             //NOTE/: Ишем по email
             const user = await User.findOne({ email: email });
 

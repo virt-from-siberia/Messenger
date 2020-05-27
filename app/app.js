@@ -2,12 +2,15 @@ const express = require("express");
 const config = require("config");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const updateLastSeen = require("./middleware/updateLastSeen");
 
 const app = express();
 
 app.use(express.json({ extended: true }));
 
 app.use(bodyParser.json({ extended: true }));
+//NOTE/: middleware обновляет последнее посишение пользователя
+app.use(updateLastSeen);
 
 //NOTE/: Регистрация и логин
 app.use("/api/auth", require("./routes/auth.routes"));
@@ -26,6 +29,7 @@ app.use("/user", require("./routes/user.routes"));
 app.use("/dialogs", require("./routes/dialogs.routes"));
 
 //NOTE/: Получить все сообшения  по id диалогу
+//NOTE/: создать диалог
 app.use("/messages", require("./routes/messages.routes"));
 
 const PORT = config.get("post") || 5000;

@@ -1,11 +1,12 @@
 const express = require("express");
 const DialogModel = require("../models/Dialog");
-// const UserModel = require("../models/Dialog");
+const MessageModel = require("../models/Message");
 
 class DialogController {
-    //Получить диалог по id автора
+    //Получить список диалогов автора по id
     index(req, res) {
-        const authorId = req.params.id;
+        //BUG:/ Временный id автора
+        const authorId = "5eca3261568eea35740d7bc8";
 
         DialogModel.find({ author: authorId })
             //NOTE/: populate  "author" - получить автора диалога с данными
@@ -37,8 +38,23 @@ class DialogController {
         //NOTE/: Сохраняем диалог в бд
         dialog
             .save()
-            .then((data) => {
-                res.json(data);
+            .then((dialogObj) => {
+                //NOTE/: Сразу создаем новое сообщение в котором будут содержатся
+                //NOTE/: текст, диалог которому он пренадлежит
+                const message = new MessageModel({
+                    //NOTE/: Текст сообшения
+                    text: req.body.text,
+                    //NOTE/: id диалога
+                    dialog: dialogObj._id,
+                    //NOTE/: автор диалога
+                    user: req.body.author,
+                });
+
+                //NOTE/: сохраняем диалог
+
+                message.save().then(() => {
+                    res.json(dialogObj);
+                });
             })
             .catch((reason) => {
                 res.json(reason);

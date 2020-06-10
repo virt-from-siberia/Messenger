@@ -3,6 +3,7 @@ const config = require("config");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const updateLastSeen = require("./middleware/updateLastSeen");
+const authMiddleware = require("./middleware/auth.middleware");
 
 const app = express();
 
@@ -15,9 +16,9 @@ app.use(updateLastSeen);
 //NOTE/: Регистрация и логин
 app.use("/api/auth", require("./routes/auth.routes"));
 //NOTE/: FAKE JSON DIALOGS
-app.use("/api", require("./routes/fake.routes"));
+app.use("/api", authMiddleware, require("./routes/fake.routes"));
 //NOTE/: test request
-app.use("/api", require("./routes/test.routes"));
+app.use("/api", authMiddleware, require("./routes/test.routes"));
 
 //NOTE/:  Получить пользователя по id
 //NOTE/:  Получить информацию о себе

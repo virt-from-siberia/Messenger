@@ -2,6 +2,7 @@
 
 const { Router } = require("express");
 const router = Router();
+const authMiddleware = require("../middleware/auth.middleware");
 
 const dialogs = [
     {

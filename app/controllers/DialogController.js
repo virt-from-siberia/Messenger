@@ -5,8 +5,9 @@ const MessageModel = require("../models/Message");
 class DialogController {
     //Получить список диалогов автора по id
     index(req, res) {
+        console.log(req.user.userId);
         //BUG:/ Временный id автора
-        const authorId = "5eca3261568eea35740d7bc8";
+        const authorId = req.user.userId;
 
         DialogModel.find({ author: authorId })
             //NOTE/: populate  "author" - получить автора диалога с данными

@@ -22,9 +22,9 @@ class MessageController {
     //NOTE/: создать диалог
     //NOTE/: привязываем сообщение к конкретному диалогу челез id диалога dialog_id
     create(req, res) {
-        console.log("REQUEST USER : ", req.user);
+        console.log("REQUEST USER : ", req.user.userId);
         //BUG: Временный ID пользователяы
-        const userId = "5eca3261568eea35740d7bc8";
+        const userId = req.user.userId;
 
         const postData = {
             //NOTE/: Текст диалога

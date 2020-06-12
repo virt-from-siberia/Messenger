@@ -38,7 +38,20 @@ class UserController {
     }
 
     //NOTE/: Получить информацию о себе
-    getMe() {}
+    async getMe(req, res) {
+        const id = req.user.userId;
+        //NOTE/: Делаем запрос к бд, найти пользователя с таким id
+        await UserModel.findById(id)
+            .then((user) => {
+                res.json(user);
+            })
+            .catch((err) => {
+                //NOTE/: Если пользователь не найден
+                res.status(404).json({
+                    message: "Пользователь не найден",
+                });
+            });
+    }
 }
 
 module.exports = UserController;

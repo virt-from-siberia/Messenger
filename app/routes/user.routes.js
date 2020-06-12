@@ -5,7 +5,7 @@ const router = Router();
 const User = new UserController();
 
 //NOTE/:  Получить пользователя по id
-router.get("/:id", User.show);
+router.get("/me", User.getMe);
 
 //NOTE/: Удалить пользователя по id
 router.delete("/:id", User.delete);

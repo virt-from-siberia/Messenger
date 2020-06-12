@@ -2,10 +2,16 @@ const express = require("express");
 const config = require("config");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const socket = require("socket.io");
+const { createServer } = require("http");
 const updateLastSeen = require("./middleware/updateLastSeen");
 const authMiddleware = require("./middleware/auth.middleware");
 
 const app = express();
+
+//NOTE/: Подключаем socket.io
+const http = createServer(app);
+const io = socket(http);
 
 app.use(express.json({ extended: true }));
 
@@ -23,17 +29,27 @@ app.use("/api", authMiddleware, require("./routes/test.routes"));
 //NOTE/:  Получить пользователя по id
 //NOTE/:  Получить информацию о себе
 //NOTE/: Удалить пользователя
-app.use("/user", require("./routes/user.routes"));
+app.use("/user", authMiddleware, require("./routes/user.routes"));
 
 //NOTE/: Получить все диалоги пользователя по id
 //NOTE/: Создать диалог, с параметрами author и partner
-app.use("/dialogs", require("./routes/dialogs.routes"));
+app.use("/dialogs", authMiddleware, require("./routes/dialogs.routes"));
 
 //NOTE/: Получить все сообшения  по id диалогу
 //NOTE/: создать диалог
-app.use("/messages", require("./routes/messages.routes"));
+app.use("/messages", authMiddleware, require("./routes/messages.routes"));
 
 const PORT = config.get("post") || 5000;
+
+//NOTE/: сервер socket.io
+io.on("connection", (socket) => {
+    console.log("SOCKED CONNECTED");
+    socket.emit("CHAT:RECEIVE_MESSAGE", "lol");
+
+    socket.on("CLIENT:SEND_MESSAGE", function (obj) {
+        console.log(obj);
+    });
+});
 
 async function start() {
     try {
@@ -43,7 +59,7 @@ async function start() {
             useCreateIndex: true,
             useFindAndModify: false,
         });
-        app.listen(5000, () => {
+        http.listen(5000, () => {
             console.log(`:::APP HAS BEEN STARTED::: on POST :  ${PORT}`);
         });
     } catch (err) {

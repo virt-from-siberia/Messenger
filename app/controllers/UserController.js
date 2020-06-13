@@ -1,7 +1,11 @@
 const express = require("express");
 const UserModel = require("../models/User");
-
+const soket = require("socket.io");
 class UserController {
+    constructor(io) {
+        this.io = io;
+    }
+
     //Получить пользователя по id
     async show(req, res) {
         //NOTE/: берем id пользователя из req.params.id

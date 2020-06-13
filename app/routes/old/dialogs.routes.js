@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const io = require("socket.io");
 const DialogController = require("../controllers/DialogController");
 const router = Router();
 

@@ -15,8 +15,8 @@
 
 
         window.socket = socket;
-        socket.on('CHAT:RECEIVE_MESSAGE', (msg) => {
-            console.log('message: ' + msg);
+        socket.on('NEW_MESSAGE', (msg) => {
+            console.log('NEW MESSAGE: ' + msg);
         });
 
     </script>

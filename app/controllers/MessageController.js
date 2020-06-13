@@ -2,6 +2,10 @@ const express = require("express");
 const MessageModel = require("../models/Message");
 
 class MessageController {
+    constructor(io) {
+        io = this.io;
+    }
+
     //Получить список сообщений по id диалога
     index(req, res) {
         //NOTE/: берем id диалога из req.params.id
@@ -22,8 +26,8 @@ class MessageController {
     //NOTE/: создать диалог
     //NOTE/: привязываем сообщение к конкретному диалогу челез id диалога dialog_id
     create(req, res) {
-        console.log("REQUEST USER : ", req.user.userId);
-        //BUG: Временный ID пользователяы
+        // console.log("REQUEST USER : ", req.user.userId);
+
         const userId = req.user.userId;
 
         const postData = {
@@ -41,6 +45,7 @@ class MessageController {
             .save()
             .then((obj) => {
                 res.json(obj);
+                // this.io.emit("NEW_MESSAGE", obj);
             })
             .catch((err) => {
                 res.json(err);

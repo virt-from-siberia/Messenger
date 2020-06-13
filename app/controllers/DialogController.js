@@ -3,6 +3,10 @@ const DialogModel = require("../models/Dialog");
 const MessageModel = require("../models/Message");
 
 class DialogController {
+    constructor(io) {
+        this.io = io;
+    }
+
     //Получить список диалогов автора по id
     index(req, res) {
         console.log(req.user.userId);

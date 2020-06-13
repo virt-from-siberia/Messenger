@@ -1,8 +1,9 @@
 const { Router } = require("express");
+const io = require("socket.io");
 const UserController = require("../controllers/UserController");
 const router = Router();
 
-const User = new UserController();
+const User = new UserController(io);
 
 //NOTE/:  Получить пользователя по id
 router.get("/me", User.getMe);
